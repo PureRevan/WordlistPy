@@ -20,7 +20,12 @@ def appending(char: str):
     return lambda word: f"{word}{char}"
 
 
+def no_change(word: str):
+    return word
+
+
 basic_patterns = [
+    no_change,
     begins_lowercase,
     begins_uppercase,
     appending("!"),
@@ -31,6 +36,7 @@ basic_patterns = [
 ]
 
 moderate_patterns = [
+    no_change,
     begins_lowercase,
     begins_uppercase,
     appending("!"),
@@ -52,6 +58,7 @@ moderate_patterns = [
 ]
 
 comprehensive_patterns = [
+    no_change,
     begins_lowercase,
     begins_uppercase,
     appending("!"),
