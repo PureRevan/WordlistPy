@@ -22,7 +22,7 @@ if __name__ == '__main__':
     import sys
 
     if len(sys.argv) < 2:
-        print("Usage: python pattern.py file [num_len = 5]")
+        print("Usage: python utils.py file [num_len = 5]")
         sys.exit(1)
 
     _file = str(sys.argv[1])
