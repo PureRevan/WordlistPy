@@ -7,8 +7,8 @@ def generate_variations(word: str, substitution: bool = True, nums_append: bool 
                         nums_prepend: bool = True, pattern: bool = True,
                         substitution_level: int = 0, pattern_level: int = 0,
                         start_nums_appending_len: int = 1, stop_nums_appending_len: int = 3,
-                        start_nums_prepending_len: int = 1, stop_nums_prepending_len: int = 1) -> set[str]:
-    variations = {word}
+                        start_nums_prepending_len: int = 1, stop_nums_prepending_len: int = 1) -> list[str]:
+    variations = [word]
 
     if nums_append:
         variations = append_nums_all(variations, start_nums_appending_len, stop_nums_appending_len)
