@@ -20,7 +20,7 @@ def appending(char: str):
     return lambda word: f"{word}{char}"
 
 
-def no_change(word: str):
+def no_change(word: str) -> str:
     return word
 
 

@@ -1,14 +1,15 @@
 from patterns_data import patterns
+from typing import Iterable
 
 from itertools import chain
 
 
 def apply_patterns(word: str, level: int = 0) -> list[str]:
-    return [pattern(word) for pattern in patterns[level]]
+    return list({pattern(word) for pattern in patterns[level]})
 
 
-def apply_patterns_all(words: list[str], level: int = 0) -> list[str]:
-    return list(chain.from_iterable([apply_patterns(word, level) for word in words]))
+def apply_patterns_all(words: Iterable[str], level: int = 0) -> list[str]:
+    return list(set(chain.from_iterable(apply_patterns(word, level) for word in words)))
 
 
 if __name__ == '__main__':

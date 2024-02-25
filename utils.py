@@ -7,13 +7,11 @@ def generate_base_wordlist(file_name: str, num_len: int = 5):
         open(file_name, "x").close()
 
     with open(file_name, "a") as file:
-        file.write("\n".join(list(
+        file.write("\n".join(set(
             chain.from_iterable(
                 [
-                    [
-                        "".join(p) for p in product(("0", "1", "2", "3", "4", "5", "6", "7", "8", "9"), repeat=i)
-                    ] for i in range(1, num_len + 1)
-                ]
+                    "".join(p) for p in product(("0", "1", "2", "3", "4", "5", "6", "7", "8", "9"), repeat=i)
+                ] for i in range(1, num_len + 1)
             )
         )))
 

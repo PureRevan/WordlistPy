@@ -1,6 +1,7 @@
 from substitutions_data import substitutions
 
 from itertools import chain
+from typing import Iterable
 
 
 def substitute(word: str, level: int = 0) -> list[str]:
@@ -17,11 +18,11 @@ def substitute(word: str, level: int = 0) -> list[str]:
 
         return variations
 
-    return generate_word_variations(word, substitutions[level])
+    return list(set(generate_word_variations(word, substitutions[level])))
 
 
-def substitute_all(words: list[str], level: int = 0) -> list[str]:
-    return list(chain.from_iterable([substitute(word, level) for word in words]))
+def substitute_all(words: Iterable[str], level: int = 0) -> list[str]:
+    return list(set(chain.from_iterable(substitute(word, level) for word in words)))
 
 
 if __name__ == '__main__':
@@ -34,7 +35,7 @@ if __name__ == '__main__':
     _word = sys.argv[1]
     _level = sys.argv[2] if len(sys.argv) > 2 else 0
 
-    print("\n".join(substitute(_word, int(_level))))
+    print("\n".join(set(substitute(_word, int(_level)))))
 
 
 

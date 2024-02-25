@@ -1,32 +1,29 @@
 from itertools import chain, product
+from typing import Iterable
 
 
 def append_nums(word: str, start_num_len: int = 1, end_num_len: int = 4) -> list[str]:
-    return list(chain.from_iterable(
+    return [word, *chain.from_iterable(
         [
-            [
-                word + "".join(p) for p in product(("0", "1", "2", "3", "4", "5", "6", "7", "8", "9"), repeat=i)
-            ] for i in range(max(1, start_num_len), end_num_len + 1)
-        ]
-    ))
+            word + "".join(p) for p in product(("0", "1", "2", "3", "4", "5", "6", "7", "8", "9"), repeat=i)
+        ] for i in range(max(1, start_num_len), end_num_len + 1))
+    ]
 
 
-def append_nums_all(words: list[str], start_num_len: int = 1, end_num_len: int = 4) -> list[str]:
-    return list(chain.from_iterable([append_nums(word, start_num_len, end_num_len) for word in words]))
+def append_nums_all(words: Iterable[str], start_num_len: int = 1, end_num_len: int = 4) -> list[str]:
+    return list(chain.from_iterable(append_nums(word, start_num_len, end_num_len) for word in words))
 
 
 def prepend_nums(word: str, start_num_len: int = 1, end_num_len: int = 4) -> list[str]:
-    return list(chain.from_iterable(
+    return [word, *chain.from_iterable(
         [
-            [
-                "".join(p) + word for p in product(("0", "1", "2", "3", "4", "5", "6", "7", "8", "9"), repeat=i)
-            ] for i in range(max(1, start_num_len), end_num_len + 1)
-        ]
-    ))
+            "".join(p) + word for p in product(("0", "1", "2", "3", "4", "5", "6", "7", "8", "9"), repeat=i)
+        ] for i in range(max(1, start_num_len), end_num_len + 1))
+    ]
 
 
-def prepend_nums_all(words: list[str], start_num_len: int = 1, end_num_len: int = 4) -> list[str]:
-    return list(chain.from_iterable([prepend_nums(word, start_num_len, end_num_len) for word in words]))
+def prepend_nums_all(words: Iterable[str], start_num_len: int = 1, end_num_len: int = 4) -> list[str]:
+    return list(chain.from_iterable(prepend_nums(word, start_num_len, end_num_len) for word in words))
 
 
 if __name__ == '__main__':
