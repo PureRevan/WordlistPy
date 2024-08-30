@@ -59,7 +59,7 @@ For **[Substitution patterns](WordlistPy/substitution.py)** and **[Other pattern
 
 ### Options
 
-The help page along with all options is listed if no arguments are passed. Hereby, signal [] optional arguments with default values.
+The help page along with all options is listed if no arguments are passed. Hereby, "[]" signal optional arguments with default values.
 
 All arguments ***must*** be passed in the order they are listed and ***cannot*** be passed as keyword arguments or in any other way (at least on the command line). 
 
