@@ -1,6 +1,5 @@
 import sys
-
-from variations import generate_variations
+from WordlistPy.variations import generate_variations
 
 
 if len(sys.argv) < 2:

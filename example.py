@@ -1,8 +1,9 @@
-def example_main():
-    from substitution import substitute, substitute_all
-    from nums_pattern import append_nums
-    from variations import generate_variations
+from WordlistPy.substitution import substitute, substitute_all
+from WordlistPy.nums_pattern import append_nums
+from WordlistPy.variations import generate_variations
 
+
+def example_main():
     res = substitute("Test")
     print("For: substitute(\"Test\")")
     print(f"Length: {len(res)}")
