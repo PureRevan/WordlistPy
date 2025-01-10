@@ -26,7 +26,7 @@ For **[Substitution patterns](WordlistPy/substitution.py)** and **[Other pattern
 
 1. Clone the git repository
     ```shell
-    git clone https://github.com/DarthRevan333/WordlistPy
+    git clone https://github.com/PureRevan/WordlistPy
     ```
 
 2. Use the cloned project
@@ -48,7 +48,7 @@ For **[Substitution patterns](WordlistPy/substitution.py)** and **[Other pattern
         > Usage: python WordlistPy word [substitution = 1] [patterns = 1] [nums_append = 3] [nums_prepend = 0]
         ```
 
-    - Use the *[generate_variations](https://github.com/DarthRevan333/WordlistPy/blob/main/WordlistPy/variations.py#L6)* function in another Python script
+    - Use the *[generate_variations](https://github.com/PureRevan/WordlistPy/blob/main/WordlistPy/variations.py#L6)* function in another Python script
         ```Python
         from WordlistPy import generate_variations
 
